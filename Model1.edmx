@@ -17,6 +17,10 @@
         </EntityType>
         <Function Name="Procedure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="param1" Type="int" Mode="In" />
+          <Parameter Name="param2" Type="nvarchar" Mode="In" />
+          <Parameter Name="param3" Type="nvarchar" Mode="In" />
+          <Parameter Name="param4" Type="nvarchar" Mode="In" />
+          <Parameter Name="param5" Type="nvarchar" Mode="In" />
         </Function>
         <EntityContainer Name="Хранилище DemoEFModelContainer">
           <EntitySet Name="Table_1" EntityType="Self.Table_1" Schema="dbo" store:Type="Tables" />
@@ -39,6 +43,10 @@
           <EntitySet Name="Table_1" EntityType="DemoEFModel.Table_1" />
           <FunctionImport Name="Procedure" ReturnType="Collection(DemoEFModel.Procedure_Result)">
             <Parameter Name="param1" Mode="In" Type="Int32" />
+            <Parameter Name="param2" Mode="In" Type="String" />
+            <Parameter Name="param3" Mode="In" Type="String" />
+            <Parameter Name="param4" Mode="In" Type="String" />
+            <Parameter Name="param5" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Procedure_Result">

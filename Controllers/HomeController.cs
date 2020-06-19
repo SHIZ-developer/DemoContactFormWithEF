@@ -35,8 +35,23 @@ namespace DemoContactFormWithEF.Controllers
         public ActionResult Create(Table_1 table)
         {
             //Сохраняем полученные в пост запросе данные
-            db.Table.Add(table);
-            db.SaveChangesAsync();
+            //Используем хранимую процедуру
+            try
+            {
+                _ = db.Procedure(table.Id, table.FIO, table.Email, table.Tel, table.Foto);
+            }
+            catch(Exception exStoreproc)
+            {
+                //Будет выходить исключение, т.к. хранимая процедура ничего не возвращает.
+                Console.Write(exStoreproc.ToString());
+            }
+            
+            
+
+            //Можно иначе просто сохранить
+            //db.Table.Add(table);
+            //db.SaveChangesAsync();
+
             return View();
         }
 
