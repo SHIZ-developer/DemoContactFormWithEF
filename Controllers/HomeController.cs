@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DemoContactFormWithEF;
+using DemoContactFormWithEF.ServiceReference;
 
 namespace DemoContactFormWithEF.Controllers
 {
@@ -18,10 +19,17 @@ namespace DemoContactFormWithEF.Controllers
 
         public ActionResult About()
         {
-            IEnumerable<Table_1> table = db.Table;
+            IEnumerable<DemoContactFormWithEF.Table_1> table = db.Table;
             // передаем все объекты в динамическое свойство Table в ViewBag
             ViewBag.Table = table;
 
+            return View();
+        }
+
+        private ServiceClient sc = new ServiceClient();
+        public ActionResult AboutWCF()
+        {
+            ViewBag.Table = sc.findAll();
             return View();
         }
 
@@ -32,7 +40,7 @@ namespace DemoContactFormWithEF.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Table_1 table)
+        public ActionResult Create(DemoContactFormWithEF.Table_1 table)
         {
             //Сохраняем полученные в пост запросе данные
             //Используем хранимую процедуру
@@ -58,12 +66,12 @@ namespace DemoContactFormWithEF.Controllers
         [HttpGet]
         public ActionResult Edit(int Id)
         {
-            Table_1 recTable = db.Table.Find(Id);
+            DemoContactFormWithEF.Table_1 recTable = db.Table.Find(Id);
             return View(recTable);
         }
 
         [HttpPost]
-        public ActionResult Edit(Table_1 table)
+        public ActionResult Edit(DemoContactFormWithEF.Table_1 table)
         {
             //Сохраняем полученные в пост запросе данные
             db.Table.AddOrUpdate(table);
@@ -73,13 +81,13 @@ namespace DemoContactFormWithEF.Controllers
 
         public ActionResult Delete(int Id)
         {
-            Table_1 deleteRec = db.Table.Find(Id);
+            DemoContactFormWithEF.Table_1 deleteRec = db.Table.Find(Id);
             return View(deleteRec);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(Table_1 table)
+        public ActionResult Delete(DemoContactFormWithEF.Table_1 table)
         {
             //Ищем запись по Id с LINQ и удаляем
             var findRec = from Table_1 in db.Table

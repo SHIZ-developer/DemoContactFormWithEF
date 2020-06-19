@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Решение";
+}
+<h2>@ViewBag.Title.</h2>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Список пользователей с использованием сервиса WCF</title>
+</head>
+<body>
+    <div>
+        <h3>Список с использованием сервиса WCF:</h3>
+        <p></p>
+
+        <table class="table">
+            <tr>
+                <th>
+                    <p>Фамилия И.О.</p>
+                </th>
+                <th>
+                    <p>e-mail</p>
+                </th>
+                <th>
+                    <p>Телефон</p>
+                </th>
+                <th>
+                    <p>Фото</p>
+                </th>
+            </tr>
+
+            @foreach (var item in ViewBag.Table)
+            {
+                <tr>
+                    <td>
+                        <p>@item.FIO</p>
+                    </td>
+                    <td>
+                        <p>@item.Email</p>
+                    </td>
+                    <td>
+                        <p>@item.Tel</p>
+                    </td>
+                    <td>
+                        <p><img src="@item.Foto" width="150" /></p>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>
