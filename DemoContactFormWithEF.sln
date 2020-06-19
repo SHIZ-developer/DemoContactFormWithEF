@@ -4,6 +4,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoContactFormWithEF", "DemoContactFormWithEF.csproj", "{8711A97A-5FAA-446A-80D0-5E2A71B5E604}"
+	ProjectSection(ProjectDependencies) = postProject
+		{764706FD-D63D-4FE4-9F06-5FF1EACBA8CD} = {764706FD-D63D-4FE4-9F06-5FF1EACBA8CD}
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DemoWCFService", "..\DemoWCFService\", "{764706FD-D63D-4FE4-9F06-5FF1EACBA8CD}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_16402"
+		Debug.AspNetCompiler.PhysicalPath = "..\DemoWCFService\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_16402\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_16402"
+		Release.AspNetCompiler.PhysicalPath = "..\DemoWCFService\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_16402\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "16402"
+		SlnRelativePath = "..\DemoWCFService\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +40,10 @@ Global
 		{8711A97A-5FAA-446A-80D0-5E2A71B5E604}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8711A97A-5FAA-446A-80D0-5E2A71B5E604}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8711A97A-5FAA-446A-80D0-5E2A71B5E604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{764706FD-D63D-4FE4-9F06-5FF1EACBA8CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{764706FD-D63D-4FE4-9F06-5FF1EACBA8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{764706FD-D63D-4FE4-9F06-5FF1EACBA8CD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{764706FD-D63D-4FE4-9F06-5FF1EACBA8CD}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
