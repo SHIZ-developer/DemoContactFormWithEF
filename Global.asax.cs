@@ -15,7 +15,9 @@ namespace DemoContactFormWithEF
         protected void Application_Start()
         {
             //В моделях создана функция первичной инициализации базы для создания трёх записей
-            Database.SetInitializer(new TableInitializer());
+            //Database.SetInitializer(new TableInitializer());
+            //Другой вариант чтобы не удалять хранимую процедуру
+            Database.SetInitializer(new CreateDatabaseIfNotExists<DemoEFEntities1>());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
